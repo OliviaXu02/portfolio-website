@@ -4,43 +4,36 @@ import './Contact.css';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('sending');
 
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/mnnlnzbb', {
         method: 'POST',
+        body: formData,
         headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+          'Accept': 'application/json'
+        }
       });
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setStatus('idle'), 3000);
+        form.reset();
+        setTimeout(() => setStatus('idle'), 5000);
       } else {
         setStatus('error');
+        setTimeout(() => setStatus('idle'), 5000);
       }
     } catch (error) {
       setStatus('error');
-      console.error('Error sending message:', error);
+      setTimeout(() => setStatus('idle'), 5000);
+      console.error('Error:', error);
     }
   };
 
@@ -91,8 +84,6 @@ const Contact: React.FC = () => {
                 type="text"
                 id="name"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
                 required
               />
             </div>
@@ -103,8 +94,6 @@ const Contact: React.FC = () => {
                 type="email"
                 id="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
                 required
               />
             </div>
@@ -115,21 +104,23 @@ const Contact: React.FC = () => {
                 id="message"
                 name="message"
                 rows={5}
-                value={formData.message}
-                onChange={handleChange}
                 required
               />
             </div>
 
             <button type="submit" className="submit-btn" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending...' : t('contact.send')}
+              {status === 'sending' ? (t('contact.sending') || 'Sending...') : t('contact.send')}
             </button>
 
             {status === 'success' && (
-              <p className="form-message success">Message sent successfully!</p>
+              <p className="form-message success">
+                {t('contact.success') || 'Message sent successfully!'}
+              </p>
             )}
             {status === 'error' && (
-              <p className="form-message error">Failed to send message. Please try again.</p>
+              <p className="form-message error">
+                {t('contact.error') || 'Failed to send message. Please try again.'}
+              </p>
             )}
           </form>
         </div>

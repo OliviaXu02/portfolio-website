@@ -12,6 +12,15 @@ const Hero: React.FC = () => {
     }
   };
 
+  // 根据语言选择简历
+  const getResumeLink = () => {
+    return language === 'en' ? '/Resume_YouyongXu.pdf' : '/简历_徐有彤.pdf';
+  };
+
+  const getResumeFileName = () => {
+    return language === 'en' ? 'Resume_YouyongXu.pdf' : '简历_徐有彤.pdf';
+  };
+
   return (
     <section id="hero" className="hero">
       <div className="hero-content">
@@ -72,8 +81,8 @@ const Hero: React.FC = () => {
             {t('hero.viewProjects')}
           </button>
           <a 
-            href="/resume.pdf" 
-            download 
+            href={getResumeLink()}
+            download={getResumeFileName()}
             className="btn btn-secondary"
           >
             {t('hero.downloadCV')}

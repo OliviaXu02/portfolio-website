@@ -1,0 +1,229 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+body.theme-professional .navbar {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.theme-professional .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-stardew .navbar {
+  background: rgba(245, 230, 211, 0.9);
+  border-bottom: 2px solid #8B6F47;
+}
+
+body.theme-stardew .navbar.scrolled {
+  background: rgba(245, 230, 211, 0.98);
+  box-shadow: 0 4px 8px rgba(139, 111, 71, 0.3);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+body.theme-professional .navbar-logo {
+  color: #2563eb;
+}
+
+body.theme-stardew .navbar-logo {
+  color: #8B6F47;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+body.theme-professional .nav-link {
+  color: #1f2937;
+}
+
+body.theme-stardew .nav-link {
+  color: #3E2723;
+  font-weight: 600;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: width 0.3s ease;
+}
+
+body.theme-professional .nav-link::after {
+  background: #2563eb;
+}
+
+body.theme-stardew .nav-link::after {
+  background: #FFD93D;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-controls {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.language-toggle {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+body.theme-professional .language-toggle {
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+body.theme-stardew .language-toggle {
+  color: #6D4C41;
+  border: 2px solid #8B6F47;
+  background: rgba(255, 248, 231, 0.5);
+}
+
+.language-toggle:hover {
+  transform: translateY(-2px);
+}
+
+body.theme-professional .language-toggle:hover {
+  background: #f9fafb;
+  border-color: #2563eb;
+}
+
+body.theme-stardew .language-toggle:hover {
+  background: rgba(255, 217, 61, 0.3);
+}
+
+.language-toggle .separator {
+  color: #d1d5db;
+}
+
+.language-toggle .active {
+  font-weight: 700;
+}
+
+body.theme-professional .language-toggle .active {
+  color: #2563eb;
+}
+
+body.theme-stardew .language-toggle .active {
+  color: #8B6F47;
+}
+
+.theme-toggle {
+  background: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+body.theme-professional .theme-toggle {
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  background: white;
+}
+
+body.theme-stardew .theme-toggle {
+  color: #3E2723;
+  border: 2px solid #8B6F47;
+  background: rgba(255, 217, 61, 0.2);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+body.theme-professional .theme-toggle:hover {
+  background: #f9fafb;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+body.theme-stardew .theme-toggle:hover {
+  background: rgba(255, 217, 61, 0.5);
+  box-shadow: 0 4px 8px rgba(255, 217, 61, 0.3);
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .navbar-controls {
+    gap: 0.75rem;
+  }
+
+  .language-toggle,
+  .theme-toggle {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-links {
+    display: none;
+  }
+}

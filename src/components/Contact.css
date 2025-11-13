@@ -1,0 +1,258 @@
+.contact {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+body.theme-professional .contact {
+  background: var(--background);
+}
+
+body.theme-stardew .contact {
+  background: var(--surface);
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+}
+
+.contact-icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+body.theme-professional .contact-icon {
+  background: var(--surface);
+  color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-stardew .contact-icon {
+  background: var(--background);
+  color: var(--primary);
+  border: 3px solid var(--primary);
+  box-shadow: 4px 4px 0px rgba(139, 111, 71, 0.3);
+}
+
+.contact-icon-link:hover .contact-icon {
+  transform: translateY(-8px);
+}
+
+body.theme-professional .contact-icon-link:hover .contact-icon {
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+  background: var(--primary);
+  color: white;
+}
+
+body.theme-stardew .contact-icon-link:hover .contact-icon {
+  box-shadow: 6px 6px 0px rgba(255, 217, 61, 0.5);
+  background: var(--accent);
+  border-color: var(--primary);
+}
+
+.contact-icon-link span {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.contact-divider {
+  text-align: center;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.contact-divider::before,
+.contact-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: var(--border);
+}
+
+.contact-divider::before {
+  left: 0;
+}
+
+.contact-divider::after {
+  right: 0;
+}
+
+.contact-divider span {
+  background: var(--background);
+  padding: 0 1rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+body.theme-stardew .contact-divider span {
+  background: var(--surface);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+body.theme-professional .form-group input,
+body.theme-professional .form-group textarea {
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--text);
+}
+
+body.theme-stardew .form-group input,
+body.theme-stardew .form-group textarea {
+  border: 2px solid var(--primary);
+  background: var(--background);
+  color: var(--text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+}
+
+body.theme-professional .form-group input:focus,
+body.theme-professional .form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+body.theme-stardew .form-group input:focus,
+body.theme-stardew .form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255, 217, 61, 0.3);
+}
+
+.submit-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+body.theme-professional .submit-btn {
+  background: var(--primary);
+  color: white;
+}
+
+body.theme-stardew .submit-btn {
+  background: var(--primary);
+  color: white;
+  border: 2px solid var(--text);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+}
+
+body.theme-professional .submit-btn:hover:not(:disabled) {
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+body.theme-stardew .submit-btn:hover:not(:disabled) {
+  box-shadow: 6px 6px 0px rgba(255, 217, 61, 0.5);
+  background: var(--accent);
+  color: var(--text);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-message {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-message.success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid #10b981;
+}
+
+.form-message.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 4rem 1rem;
+  }
+
+  .contact-icons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+}

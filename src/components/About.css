@@ -1,0 +1,158 @@
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem;
+}
+
+body.theme-professional .about {
+  background: var(--surface);
+}
+
+body.theme-stardew .about {
+  background: var(--background);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+body.theme-professional .section-title {
+  color: var(--text);
+}
+
+body.theme-stardew .section-title {
+  color: var(--primary);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+body.theme-stardew .about-paragraph {
+  background: rgba(255, 248, 231, 0.5);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+body.theme-professional .stat-card {
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-stardew .stat-card {
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  box-shadow: 4px 4px 0px rgba(139, 111, 71, 0.2);
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+}
+
+body.theme-professional .stat-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+body.theme-stardew .stat-card:hover {
+  box-shadow: 6px 6px 0px rgba(255, 217, 61, 0.4);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+body.theme-professional .stat-number {
+  color: var(--primary);
+}
+
+body.theme-stardew .stat-number {
+  color: var(--accent);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-stats {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .stat-card {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  body.theme-stardew .section-title {
+    font-size: 1.5rem;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+  }
+
+  .about-stats {
+    flex-direction: column;
+  }
+}

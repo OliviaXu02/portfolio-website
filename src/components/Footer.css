@@ -1,0 +1,30 @@
+.footer {
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+body.theme-professional .footer {
+  background: var(--surface);
+}
+
+body.theme-stardew .footer {
+  background: var(--background);
+  border-top: 3px solid var(--primary);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+body.theme-stardew .footer-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.75rem;
+  color: var(--primary);
+}

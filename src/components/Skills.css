@@ -1,0 +1,129 @@
+.skills {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+body.theme-professional .skills {
+  background: var(--surface);
+}
+
+body.theme-stardew .skills {
+  background: var(--background);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.skill-category {
+  animation: fadeInUp 0.6s ease;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+body.theme-professional .category-title {
+  color: var(--primary);
+}
+
+body.theme-stardew .category-title {
+  color: var(--primary);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.skill-card {
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+body.theme-professional .skill-card {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+body.theme-stardew .skill-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  box-shadow: 3px 3px 0px rgba(139, 111, 71, 0.2);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+}
+
+body.theme-professional .skill-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+body.theme-stardew .skill-card:hover {
+  box-shadow: 5px 5px 0px rgba(255, 217, 61, 0.4);
+  border-color: var(--accent);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+body.theme-stardew .skill-name {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 968px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 4rem 1rem;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .skill-card {
+    padding: 1rem 0.5rem;
+  }
+
+  .skill-icon {
+    font-size: 2rem;
+  }
+
+  .skill-name {
+    font-size: 0.85rem;
+  }
+}

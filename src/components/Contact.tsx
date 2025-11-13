@@ -22,10 +22,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setStatus('sending');
 
-    // 这里使用EmailJS或Formspree
-    // 示例使用fetch发送到后端API
     try {
-      // 替换为你的实际API端点
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -80,15 +77,6 @@ const Contact: React.FC = () => {
                 </svg>
               </div>
               <span>GitHub</span>
-            </a>
-
-            <a href="tel:+8613819489681" className="contact-icon-link">
-              <div className="contact-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/>
-                </svg>
-              </div>
-              <span>Phone</span>
             </a>
           </div>
 

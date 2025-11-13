@@ -2,10 +2,10 @@ import { Project } from '../types';
 
 export const projects: Project[] = [
   {
-    id: 'nspace',
+    id: 'pispace',
     title: {
-      en: 'n space',
-      zh: 'n space'
+      en: 'π space',
+      zh: 'π space'
     },
     description: {
       en: 'Mobile reservation platform built with Vue 3',
@@ -26,8 +26,8 @@ export const projects: Project[] = [
       ]
     },
     techStack: ['Vue 3', 'TypeScript', 'Vite', 'Vant UI', 'Pinia', 'D3.js', 'Axios', 'Less'],
-    image: '/projects/nspace.png',
-    githubLink: 'https://github.com/yourusername/nspace',
+    image: '/projects/pispace.png',
+    githubLink: 'https://github.com/yourusername/pispace',
     demoLink: ''
   },
   {
@@ -89,22 +89,3 @@ export const projects: Project[] = [
     demoLink: 'https://yourdomain.com'
   }
 ];
-
-export const aboutContent = {
-  en: {
-    title: 'About Me',
-    paragraphs: [
-      "Hi! I'm Youtong Xu, a frontend developer with hands-on experience in Vue 3 and React ecosystems. Currently pursuing a Master of Data Science at Monash University.",
-      "I recently completed an internship at Huaxin Securities where I built a complete mobile reservation platform using Vue 3, TypeScript, and modern frontend technologies. I'm passionate about creating intuitive and efficient user interfaces.",
-      "With a strong foundation in computer science and practical development skills, I'm always eager to learn new technologies and take on challenging projects."
-    ]
-  },
-  zh: {
-    title: '关于我',
-    paragraphs: [
-      "你好！我是徐有彤，一名具备 Vue 3 和 React 实战经验的前端开发者。目前在莫那什大学攻读数据科学硕士。",
-      "最近在华鑫证券完成实习，使用 Vue 3、TypeScript 等现代前端技术开发了完整的移动端预订平台。我热衷于创建直观高效的用户界面。",
-      "凭借扎实的计算机科学基础和实践开发技能，我始终渴望学习新技术并挑战各类项目。"
-    ]
-  }
-};

@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
       <div className="hero-content">
         <div className="hero-avatar">
           <img 
-            src="/avatar.jpg" 
+            src="/Avatar.jpg" 
             alt="Youtong Xu" 
             onError={(e) => {
               (e.target as HTMLImageElement).src = 'https://via.placeholder.com/80/667eea/ffffff?text=YX';

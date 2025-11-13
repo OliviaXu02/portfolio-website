@@ -8,7 +8,21 @@
 }
 
 body.theme-professional .hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.theme-professional .hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.85) 0%, rgba(118, 75, 162, 0.85) 100%);
+  z-index: 1;
 }
 
 body.theme-stardew .hero {
@@ -24,6 +38,7 @@ body.theme-stardew .hero::before {
   left: 10%;
   opacity: 0.3;
   animation: float 6s ease-in-out infinite;
+  z-index: 1;
 }
 
 body.theme-stardew .hero::after {
@@ -35,6 +50,7 @@ body.theme-stardew .hero::after {
   opacity: 0.3;
   animation: float 5s ease-in-out infinite;
   animation-delay: 1s;
+  z-index: 1;
 }
 
 @keyframes float {

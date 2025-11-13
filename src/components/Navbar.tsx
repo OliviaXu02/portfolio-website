@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => scrollToSection('hero')}>
-          YTX
+          <img src="/logo.png" alt="Logo" className="logo-image" />
         </div>
 
         <div className="navbar-links">
